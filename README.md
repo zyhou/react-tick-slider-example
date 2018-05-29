@@ -1,1 +1,1 @@
-# react-tick-slider-example-
+# react-tick-slider-example
