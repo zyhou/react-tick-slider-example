@@ -1,18 +1,16 @@
 import React from 'react';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 
-const innerSliderHeight = 2;
-const InnerSlidebar = glamorous.div({
-  label: 'slidebar',
-  backgroundColor: 'grey',
-  height: innerSliderHeight,
-  left: 0,
-  position: 'absolute',
-  top: `calc(50% - ${innerSliderHeight / 2}px)`,
-  width: '100%',
-  willChange: 'auto',
-});
+const InnerSlidebar = styled('div')`
+    label: sidebar;
+    height: ${({ innerSliderHeight }) => `${innerSliderHeight}px`};
+    left: 0;
+    position: absolute;
+    top: ${({ innerSliderHeight }) => `calc(50% - ${innerSliderHeight / 2}px)`};
+    width: 100%;
+    will-change: auto;
+`;
 
 const computeStyle = completion => `linear-gradient(
     to right,
@@ -23,19 +21,20 @@ const computeStyle = completion => `linear-gradient(
 ) no-repeat`;
 
 const Slidebar = ({ completion }) => (
-  <InnerSlidebar
-    style={{
-      background: computeStyle(completion),
-    }}
-  />
+    <InnerSlidebar
+        style={{
+            background: computeStyle(completion),
+        }}
+        innerSliderHeight={2}
+    />
 );
 
 Slidebar.propTypes = {
-  completion: PropTypes.number,
+    completion: PropTypes.number,
 };
 
 Slidebar.defaultProps = {
-  completion: 0,
+    completion: 0,
 };
 
 export default Slidebar;
