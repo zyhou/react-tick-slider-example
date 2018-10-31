@@ -8,7 +8,7 @@
     "react-dom": "16.6.0",
     "react-emotion": "9.2.12",
     "react-scripts": "2.1.0",
-    "react-tick-slider": "^0.0.1"
+    "react-tick-slider": "^0.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
